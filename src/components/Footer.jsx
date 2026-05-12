@@ -97,13 +97,13 @@ export default function Footer() {
             </p>
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-gray-300">
-                <Mail size={18} /> vaasumfoundation@gmail.com
+                <Mail size={18} /> vaasumgroups@gmail.com
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <Phone size={18} /> +91 98765 43210
+                <Phone size={18} /> +971525249423
               </div>
               <div className="flex items-start gap-3 text-gray-300">
-                <MapPin size={18} className="mt-1" /> Chennai, Tamil Nadu, India
+                <MapPin size={18} className="mt-1" /> #9B, 9th Floor, Rolex Tower, Sheikh Zayed Road, Dubai
               </div>
             </div>
 
@@ -165,6 +165,25 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
         />
 
+        {/* Compliance Information */}
+        <motion.div
+          className="mb-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p className="text-gray-400">FSSAI Number:</p>
+              <p className="text-vaasum-light-green font-semibold">12426002000996</p>
+            </div>
+            <div>
+              <p className="text-gray-400">GST Number:</p>
+              <p className="text-vaasum-light-green font-semibold">33BSBPS0709J1ZU</p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm">
           <motion.p
@@ -172,7 +191,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            © {currentYear} VAASUM FOUNDATION. All Rights Reserved.
+            © {currentYear} VAASUM CHARITY. All Rights Reserved.
           </motion.p>
 
           <motion.div
@@ -195,12 +214,17 @@ export default function Footer() {
 
         {/* Brand Message */}
         <motion.div
-          className="mt-6 text-center text-gray-500 flex items-center justify-center gap-1"
+          className="mt-6 text-center text-gray-500 flex flex-col gap-2 items-center justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Made with <Heart size={16} className="text-vaasum-green fill-current" /> by VAASUM Foundation
+          <div className="flex items-center justify-center gap-1">
+            Made with <Heart size={16} className="text-vaasum-green fill-current" /> by VAASUM Charity
+          </div>
+          <p className="text-xs text-gray-600">
+            Powered by <a href="http://www.vaasumgroups.com" target="_blank" rel="noopener noreferrer" className="text-vaasum-light-green hover:text-vaasum-green transition-colors font-semibold">www.vaasumgroups.com</a>
+          </p>
         </motion.div>
       </div>
     </footer>

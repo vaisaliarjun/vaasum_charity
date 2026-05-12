@@ -164,6 +164,7 @@ export default function DonationModal({ isOpen, onClose, category = 'General' })
                       errors.amount ? 'border-red-500' : 'border-gray-300 dark:border-gray-600 focus:border-vaasum-green'
                     }`}
                   />
+                  <p className="text-center text-vaasum-green font-semibold text-lg mt-3">💝 Make a Difference Today</p>
                   {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount}</p>}
                 </div>
 

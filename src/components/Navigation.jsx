@@ -5,6 +5,8 @@ import { Menu, X } from 'lucide-react';
 export default function Navigation({ isDark, toggleDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [language, setLanguage] = useState('EN');
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,11 +49,13 @@ export default function Navigation({ isDark, toggleDarkMode }) {
             className="flex items-center gap-2 py-2"
             whileHover={{ scale: 1.05 }}
           >
-            <img 
-              src="/logo image.jpeg" 
-              alt="VAASUM Logo" 
-              className="h-16 w-auto"
-            />
+            <div className="bg-white rounded-lg p-1">
+              <img 
+                src="/VAASUM_LOGO_1-removebg-preview.png" 
+                alt="VAASUM Logo" 
+                className="h-14 w-auto"
+              />
+            </div>
           </motion.a>
 
           {/* Desktop Menu */}
@@ -71,6 +75,54 @@ export default function Navigation({ isDark, toggleDarkMode }) {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-vaasum-green to-vaasum-light-green group-hover:w-full transition-all duration-300"></span>
               </motion.button>
             ))}
+            {/* Language Selector */}
+            <div className="relative">
+              <motion.button
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all border ${
+                  isDark
+                    ? 'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700'
+                    : 'bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200'
+                }`}
+                whileHover={{ scale: 1.05 }}
+              >
+                🌍 {language}
+              </motion.button>
+              {showLanguageMenu && (
+                <motion.div
+                  className={`absolute right-0 mt-2 w-32 rounded-lg shadow-xl border ${
+                    isDark
+                      ? 'bg-gray-800 border-gray-700'
+                      : 'bg-white border-gray-300'
+                  }`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                >
+                  {['EN', 'FR', 'ES', 'PT', 'IT', 'AR', 'DE', 'RU'].map((lang) => (
+                    <motion.button
+                      key={lang}
+                      onClick={() => {
+                        setLanguage(lang);
+                        setShowLanguageMenu(false);
+                      }}
+                      className={`block w-full text-left px-4 py-2 font-semibold transition-all ${
+                        language === lang
+                          ? isDark
+                            ? 'bg-vaasum-green text-white'
+                            : 'bg-vaasum-green text-white'
+                          : isDark
+                            ? 'text-gray-300 hover:bg-gray-700'
+                            : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                      whileHover={{ x: 5 }}
+                    >
+                      {lang}
+                    </motion.button>
+                  ))}
+                </motion.div>
+              )}
+            </div>
             <motion.button
               onClick={toggleDarkMode}
               className={`p-2 rounded-full transition-all ${
@@ -131,6 +183,30 @@ export default function Navigation({ isDark, toggleDarkMode }) {
                 {item}
               </button>
             ))}
+            {/* Mobile Language Selector */}
+            <div className="px-4 py-3">
+              <p className={`text-xs font-semibold mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Language</p>
+              <div className="space-y-1">
+                {['EN', 'FR', 'ES', 'PT', 'IT', 'AR', 'DE', 'RU'].map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      setLanguage(lang);
+                      setIsOpen(false);
+                    }}
+                    className={`block w-full text-left px-4 py-2 rounded font-bold text-sm transition-all ${
+                      language === lang
+                        ? 'bg-vaasum-green text-white'
+                        : isDark
+                          ? 'text-gray-200 hover:bg-gray-700'
+                          : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+            </div>
             <motion.button
               onClick={() => scrollToSection('donation')}
               className="w-full px-6 py-3 mt-4 bg-gradient-to-r from-vaasum-green to-vaasum-light-green text-white rounded-lg font-bold transition-all hover:shadow-lg"

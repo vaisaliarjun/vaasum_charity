@@ -111,7 +111,7 @@ export default function Donation({ openDonationModal }) {
             "Your donation is more than just money—it's hope, it's opportunity, it's love in action. Every rupee counts, every contribution matters."
           </p>
           <p className="text-center text-vaasum-green font-bold mt-4">
-            — VAASUM Foundation Team
+            — VAASUM Charity Team
           </p>
         </motion.div>
       </div>

@@ -33,7 +33,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Address',
-      value: 'Chennai, Tamil Nadu, India',
+      value: '#9B, 9th Floor, Rolex Tower, Sheikh Zayed Road, Dubai, UAE',
       link: '#',
       color: 'from-green-400 to-green-600',
     },
@@ -224,14 +224,14 @@ export default function Contact() {
           className="rounded-2xl overflow-hidden shadow-lg h-96"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5229651887847!2d80.27047!3d13.06923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526f5e11111111%3A0x1111111111111111!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.318506056821!2d55.2539!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5e5e5e5e5e5f%3A0x5e5e5e5e5e5e5e5e!2sDubai%2C%20UAE!5e0!3m2!1sen!2sae!4v1234567890"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="VAASUM Foundation Location"
+            title="VAASUM Charity Location"
           ></iframe>
         </motion.div>
       </div>

@@ -4,15 +4,15 @@ import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop"
-          alt="Hero"
+          src="/bg img front.jpeg"
+          alt="Hero Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
@@ -28,7 +28,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            VAASUM FOUNDATION
+            VAASUM CHARITY
           </motion.h1>
 
           <motion.p

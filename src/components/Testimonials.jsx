@@ -12,7 +12,7 @@ export default function Testimonials() {
       name: 'Rajesh Kumar',
       role: 'Donor',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
-      text: 'VAASUM Foundation has transformed the lives of so many children in my village. The transparency and dedication of their team is truly inspiring. I am proud to support their mission.',
+      text: 'VAASUM Charity has transformed the lives of so many children in my village. The transparency and dedication of their team is truly inspiring. I am proud to support their mission.',
       rating: 5,
     },
     {
@@ -28,7 +28,7 @@ export default function Testimonials() {
       name: 'Anil Desai',
       role: 'Community Leader',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop',
-      text: 'VAASUM Foundation has brought real change to our community. From education programs to health camps, their work is making a tangible difference in everyone\'s lives.',
+      text: 'VAASUM Charity has brought real change to our community. From education programs to health camps, their work is making a tangible difference in everyone\'s lives.',
       rating: 5,
     },
     {
@@ -36,7 +36,7 @@ export default function Testimonials() {
       name: 'Meera Patel',
       role: 'Beneficiary',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop',
-      text: 'Thanks to VAASUM Foundation, I got the opportunity to attend school. Their support gave me confidence and hope for a better future. I am forever grateful.',
+      text: 'Thanks to VAASUM Charity, I got the opportunity to attend school. Their support gave me confidence and hope for a better future. I am forever grateful.',
       rating: 5,
     },
   ];
