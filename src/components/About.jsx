@@ -83,7 +83,7 @@ export default function About() {
       colorTag: 'from-green-400 to-green-600',
       borderColor: 'border-green-400',
       position: 'left',
-    }
+    },
     {
       id: 6,
       icon: Droplet,

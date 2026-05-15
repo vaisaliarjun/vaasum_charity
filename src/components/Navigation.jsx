@@ -46,25 +46,25 @@ export default function Navigation({ isDark, toggleDarkMode }) {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2 py-2"
+            className="flex items-center gap-2 py-2 flex-shrink-0"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="bg-white rounded-lg p-1">
+            <div className="bg-white rounded-lg p-0.5 sm:p-1 flex-shrink-0">
               <img 
                 src="/VAASUM_LOGO_1-removebg-preview.png" 
                 alt="VAASUM Logo" 
-                className="h-14 w-auto"
+                className="h-10 sm:h-12 md:h-14 w-auto"
               />
             </div>
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`font-semibold text-sm transition-all relative group ${
+                className={`font-semibold text-xs sm:text-sm lg:text-base transition-all relative group ${
                   isDark
                     ? 'text-gray-300 hover:text-vaasum-light-green'
                     : 'text-gray-700 hover:text-vaasum-green'
@@ -79,7 +79,7 @@ export default function Navigation({ isDark, toggleDarkMode }) {
             <div className="relative">
               <motion.button
                 onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                className={`px-4 py-2 rounded-full font-semibold text-sm transition-all border ${
+                className={`px-3 md:px-4 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all border ${
                   isDark
                     ? 'bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700'
                     : 'bg-gray-100 border-gray-300 text-gray-700 hover:bg-gray-200'
@@ -106,7 +106,7 @@ export default function Navigation({ isDark, toggleDarkMode }) {
                         setLanguage(lang);
                         setShowLanguageMenu(false);
                       }}
-                      className={`block w-full text-left px-4 py-2 font-semibold transition-all ${
+                      className={`block w-full text-left px-4 py-2 font-semibold text-sm transition-all ${
                         language === lang
                           ? isDark
                             ? 'bg-vaasum-green text-white'
@@ -135,7 +135,7 @@ export default function Navigation({ isDark, toggleDarkMode }) {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('donation')}
-              className="px-8 py-3 bg-gradient-to-r from-vaasum-green to-vaasum-light-green text-white rounded-full font-bold hover:shadow-lg transition-all hover:scale-105"
+              className="px-6 md:px-8 py-2 md:py-3 bg-gradient-to-r from-vaasum-green to-vaasum-light-green text-white rounded-full font-bold text-sm md:text-base hover:shadow-lg transition-all hover:scale-105 whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -144,7 +144,7 @@ export default function Navigation({ isDark, toggleDarkMode }) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-3 sm:gap-4">
             <motion.button
               onClick={toggleDarkMode}
               className={`p-2 rounded-full transition-all ${
@@ -176,7 +176,7 @@ export default function Navigation({ isDark, toggleDarkMode }) {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`block w-full text-left px-4 py-3 rounded-lg font-semibold transition-all ${
+                className={`block w-full text-left px-4 py-3 rounded-lg font-semibold text-base transition-all ${
                   isDark ? 'text-gray-200 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
@@ -184,9 +184,9 @@ export default function Navigation({ isDark, toggleDarkMode }) {
               </button>
             ))}
             {/* Mobile Language Selector */}
-            <div className="px-4 py-3">
-              <p className={`text-xs font-semibold mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Language</p>
-              <div className="space-y-1">
+            <div className="px-4 py-3 border-t border-gray-600/30">
+              <p className={`text-xs font-semibold mb-3 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Language</p>
+              <div className="grid grid-cols-4 gap-2">
                 {['EN', 'FR', 'ES', 'PT', 'IT', 'AR', 'DE', 'RU'].map((lang) => (
                   <button
                     key={lang}
@@ -194,12 +194,12 @@ export default function Navigation({ isDark, toggleDarkMode }) {
                       setLanguage(lang);
                       setIsOpen(false);
                     }}
-                    className={`block w-full text-left px-4 py-2 rounded font-bold text-sm transition-all ${
+                    className={`px-2 py-2 rounded font-bold text-xs transition-all ${
                       language === lang
                         ? 'bg-vaasum-green text-white'
                         : isDark
-                          ? 'text-gray-200 hover:bg-gray-700'
-                          : 'text-gray-700 hover:bg-gray-100'
+                          ? 'text-gray-200 hover:bg-gray-700 border border-gray-700'
+                          : 'text-gray-700 hover:bg-gray-100 border border-gray-300'
                     }`}
                   >
                     {lang}
@@ -209,9 +209,9 @@ export default function Navigation({ isDark, toggleDarkMode }) {
             </div>
             <motion.button
               onClick={() => scrollToSection('donation')}
-              className="w-full px-6 py-3 mt-4 bg-gradient-to-r from-vaasum-green to-vaasum-light-green text-white rounded-lg font-bold transition-all hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full px-6 py-3 mt-4 bg-gradient-to-r from-vaasum-green to-vaasum-light-green text-white rounded-lg font-bold text-base transition-all hover:shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Donate Now
             </motion.button>

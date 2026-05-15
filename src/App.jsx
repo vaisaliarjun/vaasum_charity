@@ -11,7 +11,7 @@ import Donation from './components/Donation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingDonateButton from './components/FloatingDonateButton';
-import ScrollToTop from './components/ScrollToTop';
+import FloatingScrollButton from './components/FloatingScrollButton';
 import DonationModal from './components/DonationModal';
 
 export default function App() {
@@ -54,7 +54,7 @@ export default function App() {
         <Contact />
         <Footer />
         <FloatingDonateButton openDonationModal={openDonationModal} />
-        <ScrollToTop />
+        <FloatingScrollButton />
         <DonationModal isOpen={isDonationModalOpen} onClose={closeDonationModal} category={donationCategory} />
       </div>
     </div>

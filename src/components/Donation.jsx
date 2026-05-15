@@ -58,18 +58,18 @@ export default function Donation({ openDonationModal }) {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-vaasum-dark-blue to-vaasum-green rounded-3xl p-8 md:p-12 text-white text-center shadow-2xl"
+          className="bg-gradient-to-r from-vaasum-dark-blue to-vaasum-green rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center shadow-2xl"
         >
           <motion.div className="flex justify-center mb-6">
-            <Heart className="w-16 h-16 animate-pulse" fill="currentColor" />
+            <Heart className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 animate-pulse" fill="currentColor" />
           </motion.div>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to Make an Impact?</h3>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to Make an Impact?</h3>
+          <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
             Join thousands of supporters who are transforming lives through their generous donations.
           </p>
           <motion.button
             onClick={() => openDonationModal?.('General Donation')}
-            className="px-10 py-4 bg-white text-vaasum-dark-blue rounded-full font-bold text-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
+            className="px-6 sm:px-10 py-3 sm:py-4 bg-white text-vaasum-dark-blue rounded-full font-bold text-sm sm:text-base md:text-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
